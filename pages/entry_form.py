@@ -109,9 +109,7 @@ def entryForm():
         complainant, suspect, caseDetail, offense = st.tabs(["Complainant / Victim's Profile", "Suspect/s Profile", "Case Detail", "Offense"])
 
         with complainant:
-            st.subheader("Victims's Profile")
             victim_data = victims.addVictim(mps_cps,ppo_cpo,pro)
-            st.button("Add Complainant",use_container_width=True, type="primary")
 
 
         with suspect:

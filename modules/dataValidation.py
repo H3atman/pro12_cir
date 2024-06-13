@@ -15,7 +15,7 @@ class VictimData_Validation(BaseModel):
     vic_age: Optional[int] = Field(..., ge=0, description="Age must be a non-negative integer")
     vic_distprov: str = Field(..., description="District/Province is required")
     vic_cityMun: str = Field(..., description="City/Municipality is required")
-    vic_brgy: str = Field(..., description="Barangay is required")
+    vic_brgy: Optional[str] = None
     vic_strName: Optional[str] = None
 
     @field_validator('vic_alias')
@@ -156,7 +156,7 @@ class New_Entry_VictimData_Validation(BaseModel):
     vic_age: Optional[int] = Field(..., ge=0, description="Age must be a non-negative integer")
     vic_distprov: str = Field(..., description="District/Province is required")
     vic_cityMun: str = Field(..., description="City/Municipality is required")
-    vic_brgy: str = Field(..., description="Barangay is required")
+    vic_brgy: str = None
     vic_strName: Optional[str] = None
 
 
