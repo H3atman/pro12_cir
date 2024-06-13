@@ -30,7 +30,7 @@ def generate_key(base, index):
 def VictimDetails(mps_cps, ppo_cpo, pro, index):
     
     # Initialize Barangay Values and City Mun Values
-    st.subheader("Victims's Profile")
+    st.subheader("Victims's Info")
     brgy_values, city_mun_value, province_value = get_brgy_city_mun(mps_cps)
 
     pro = pro
@@ -200,6 +200,7 @@ def addVictim(mps_cps, ppo_cpo, pro):
                 st.session_state.victim_count -= 1
                 st.experimental_rerun()  # Rerun the app to remove the last victim form
 
+    st.write("All Victim Data:", victim_data_list)
 
 # def addVictim(mps_cps,ppo_cpo,pro):
 #     # Initialize Barangay Values and City Mun Values
