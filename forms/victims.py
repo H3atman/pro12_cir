@@ -31,7 +31,7 @@ def VictimDetails(mps_cps, ppo_cpo, pro, index):
     
     with st.container(border=True):
         # Initialize Barangay Values and City Mun Values
-        st.subheader("Victims's Info")
+        st.subheader(f"Victims's Info {generate_key('#', index)}")
         brgy_values, city_mun_value, province_value = get_brgy_city_mun(mps_cps)
 
         pro = pro
@@ -139,11 +139,21 @@ def VictimDetails(mps_cps, ppo_cpo, pro, index):
             "vic_qlfr": vic_qlfr,
             "vic_alias": vic_alias,
             "vic_gndr": vic_gndr,
+            "vic_age_grp": vic_age_grp,
             "vic_age": vic_age,
             "vic_distprov": vic_distprov,
             "vic_cityMun": vic_cityMun,
             "vic_brgy": vic_brgy,
-            "vic_strName": vic_strName
+            "vic_strName": vic_strName,
+            "vic_birthdate": vic_birthdate,
+            "vic_relation_to_suspect": vic_relation_to_suspect,
+            "vic_status": vic_status,
+            "vic_educ": vic_educ,
+            "vic_occupation": vic_occupation,
+            "vic_sector": vic_sector,
+            "vic_civil_status": vic_civil_status,
+            "vic_ethnic": vic_ethnic
+
         }
 
         # Mapping of field names to user-friendly names
@@ -157,11 +167,20 @@ def VictimDetails(mps_cps, ppo_cpo, pro, index):
             "vic_qlfr": "Qualifier",
             "vic_alias": "Alias",
             "vic_gndr": "Gender",
+            "vic_age_grp": "Age Group",
             "vic_age": "Age",
             "vic_distprov": "District/Province",
             "vic_cityMun": "City/Municipality",
             "vic_brgy": "Barangay",
-            "vic_strName": "House No./Street Name"
+            "vic_strName": "House No./Street Name",
+            "vic_birthdate": "Victim Birthdate",
+            "vic_relation_to_suspect": "Victim Relationship to Suspect",
+            "vic_status": "Victim Status",
+            "vic_educ": "Victim Education",
+            "vic_occupation": "Victim Occupation",
+            "vic_sector": "Victim Sector",
+            "vic_civil_status": "Victim Civil Status",
+            "vic_ethnic": "Victim Ethnic Group"
         }
 
         # Validate the data using Pydantic

@@ -12,11 +12,20 @@ class VictimData_Validation(BaseModel):
     vic_qlfr: Optional[str] = None
     vic_alias: Optional[str] = None
     vic_gndr: str = Field(..., description="Gender is required")
+    vic_age_grp: Optional[str] = None
     vic_age: Optional[int] = Field(..., ge=0, description="Age must be a non-negative integer")
     vic_distprov: str = Field(..., description="District/Province is required")
     vic_cityMun: str = Field(..., description="City/Municipality is required")
     vic_brgy: Optional[str] = None
     vic_strName: Optional[str] = None
+    vic_birthdate: Optional[date] = None
+    vic_relation_to_suspect: Optional[str] = None
+    vic_status: Optional[str] = None
+    vic_educ: Optional[str] = None
+    vic_occupation: Optional[str] = None
+    vic_sector: Optional[str] = None
+    vic_civil_status: Optional[str] = None
+    vic_ethnic: Optional[str] = None
 
     @field_validator('vic_alias')
     def check_alias(cls, value):
