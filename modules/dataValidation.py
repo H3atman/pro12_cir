@@ -89,7 +89,7 @@ class Case_Detail_Validation(BaseModel):
     ppo_cpo: Optional[str]
     mps_cps: Optional[str]
     det_narrative: Optional[str] = Field(None, description="Narrative description of the case")
-    dt_reported: date = Field(..., description="Date Reported")
+    dt_reported: Optional[date]
     time_reported: Optional[time]
     dt_committed: Optional[date]
     time_committed: Optional[time]
@@ -130,7 +130,7 @@ class New_Entry_CaseDetails_Validation(BaseModel):
     ppo_cpo: Optional[str]
     mps_cps: Optional[str]
     det_narrative: Optional[str] = Field(None, description="Narrative description of the case")
-    dt_reported: date = Field(..., description="Date Reported")
+    dt_reported: Optional[date]
     time_reported: Optional[time]
     dt_committed: Optional[date]
     time_committed: Optional[time]

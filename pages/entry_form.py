@@ -3,6 +3,7 @@ import streamlit as st
 from modules.auth_utils import fetch_users, prepare_credentials, initialize_authenticator
 import requests
 from forms import offenses, victims, suspects, caseDetails
+from forms.offenses import investigator_info
 from modules.newEntry_functions import *
 from pydantic import ValidationError
 import concurrent.futures
@@ -123,7 +124,7 @@ def entryForm():
             case_detail = caseDetails.case_Details(mps_cps,ppo_cpo,pro)
         
         with offense:
-            st.subheader("Offense :red[#]")
+            invest_info = investigator_info()
             offense_detail = offenses.addOffense()
 
 
